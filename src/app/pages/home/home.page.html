@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>home</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item button *ngFor="let item of articles" [routerLink]="[item.id]">
+      
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{item.title}}</ion-card-title>
+            <ion-img [src]="item.urlToImage"></ion-img>   
+            <ion-card-subtitle> {{item.description}}</ion-card-subtitle>  
+                   
+          </ion-card-header>
+        </ion-card>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>
